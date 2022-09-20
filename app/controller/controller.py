@@ -7,7 +7,8 @@ from app.models.models import DirectoryEntry
 
 def list_contents_of_dir(dirpath: Path) -> List[DirectoryEntry]:
     """
-    Returns a list
+    Returns a list of Directory entries that are in the dirpath. Does not validate the
+    dirpath.
     """
     contents = []
     entries = [Path(x.path) for x in os.scandir(dirpath)]
@@ -21,7 +22,7 @@ def list_contents_of_dir(dirpath: Path) -> List[DirectoryEntry]:
 
 def get_contents_of_file(filepath: Path) -> str:
     """
-    Returns the contents of the filepath into a string
+    Returns the contents of the filepath into a string. Does not validate the filepath
     """
     file_contents = ''
     with open(filepath) as f:
