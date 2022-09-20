@@ -1,4 +1,6 @@
 #! /bin/sh
+
+#TODO: throw error if missing the value
 export TARGET_DIR="$1"
 
 # probably want to make this compose up / compose down
